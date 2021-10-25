@@ -9,6 +9,10 @@ app.use(cors())
 app.use(express.json())
 app.use(messageRouter)
 
+app.use("/",(req,res)=>{
+    res.send("ok")
+})
+
 //first we sync to the sql db
 sequelize.sync()
     .then(() => {
